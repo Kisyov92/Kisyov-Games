@@ -1,0 +1,29 @@
+.header {
+  background-color: #57534e;
+  padding: 1rem 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  height: 90px;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+}
+
+.header a:link,
+.header a:visited {
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: #fef08a;
+}
+.header a:active,
+.header a:hover {
+  color: #fde047;
+}
