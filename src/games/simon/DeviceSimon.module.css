@@ -1,0 +1,65 @@
+.device {
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 3px solid #3f3f46;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.device button {
+  border: none;
+}
+
+.device button:nth-child(1) {
+  background-color: green;
+}
+.device button:nth-child(2) {
+  background-color: red;
+}
+.device button:nth-child(3) {
+  background-color: yellow;
+}
+.device button:nth-child(4) {
+  background-color: blue;
+}
+.device button:active {
+  opacity: 0.7;
+}
+
+.device button:nth-child(5) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.repeat,
+.device button:nth-child(5) {
+  font-size: 2.8rem;
+  padding: 1rem 2rem;
+  background-color: rgba(227, 183, 160);
+  color: #3f3f46;
+  border-radius: 5px;
+  border: none;
+}
+
+.repeat:hover,
+.device button:nth-child(5):hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: rgb(197, 146, 119);
+  opacity: 1;
+}
+
+.repeat {
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+}

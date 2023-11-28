@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/RootLayout";
 import Darts from "./games/darts/Darts";
+import Simon from "./games/simon/Simon";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       },
       {
         path: "simon",
-        element: <p>simon</p>,
+        element: <Simon />,
       },
       {
         path: "monkey-numbers",
