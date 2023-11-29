@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import Modal from "../../UI/Modal";
 
 import classes from "./StartModal.module.css";
 
-function StartModal() {
+function StartModal({ onSetDifficulty }) {
   return (
     <Modal className={classes.start}>
       <h2>TEST YOUR MOMORY</h2>
@@ -12,8 +13,8 @@ function StartModal() {
       </p>
       <p>Hard mode: only the added part is shown.</p>
       <div>
-        <button>Easy</button>
-        <button>Hard</button>
+        <button onClick={() => onSetDifficulty("easy")}>Easy</button>
+        <button onClick={() => onSetDifficulty("hard")}>Hard</button>
       </div>
     </Modal>
   );

@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import classes from "./Stats.module.css";
 
-function Stats() {
+function Stats({ difficulty, level }) {
   return (
     <div className={classes.stats}>
-      <p>Level: 0</p>
-      <p>Difficulty: diff</p>
+      <p>Level: {level}</p>
+      <p>Difficulty: {difficulty}</p>
     </div>
   );
 }

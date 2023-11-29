@@ -30,9 +30,6 @@
 .device button:nth-child(4) {
   background-color: blue;
 }
-.device button:active {
-  opacity: 0.7;
-}
 
 .device button:nth-child(5) {
   position: absolute;
@@ -62,4 +59,8 @@
   display: block;
   margin: 0 auto;
   margin-top: 3rem;
+}
+
+.active {
+  opacity: 0.7;
 }
