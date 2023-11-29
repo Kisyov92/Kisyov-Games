@@ -2,6 +2,7 @@ import { useState } from "react";
 import DeviceSimon from "./DeviceSimon";
 import Stats from "./Stats";
 import StartModal from "./StartModal";
+import GameOverModal from "./GameOverModal";
 
 function Simon() {
   const [gameOver, setGameOver] = useState(false);
@@ -18,8 +19,18 @@ function Simon() {
     setIsPlaying(true);
   }
 
-  function handleMathingSequences() {
+  function handleEndPlay() {
     setIsPlaying(false);
+  }
+
+  function handleEndGame() {
+    setGameOver(true);
+  }
+
+  function handleGameRestart() {
+    setGameOver(false);
+    setDifficulty(null);
+    setLevel(0);
   }
 
   return (
@@ -34,10 +45,18 @@ function Simon() {
             level={level}
             onLevelUp={handleLevelUp}
             isPlaying={isPlaying}
-            onMatchingSeqs={handleMathingSequences}
+            difficulty={difficulty}
+            onEndPlay={handleEndPlay}
+            onEndGame={handleEndGame}
           />
-          {gameOver && <h2>GAME OVER</h2>}
         </>
+      )}
+      {gameOver && (
+        <GameOverModal
+          onGameRestart={handleGameRestart}
+          level={level}
+          difficulty={difficulty}
+        />
       )}
     </>
   );

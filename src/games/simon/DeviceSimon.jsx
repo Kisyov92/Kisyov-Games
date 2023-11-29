@@ -18,7 +18,14 @@ function sequenceMatch(seq, playerSeq) {
   return playerSeq.every((el, i) => el === seq[i]);
 }
 
-function DeviceSimon({ level, onLevelUp, isPlaying, onMatchingSeqs }) {
+function DeviceSimon({
+  level,
+  onLevelUp,
+  isPlaying,
+  onEndPlay,
+  onEndGame,
+  difficulty,
+}) {
   const [sequence, setSequence] = useState([]);
   const [playerSequence, setPlayerSequence] = useState([]);
   const [activeBtn, setActiveBtn] = useState([]);
@@ -30,7 +37,12 @@ function DeviceSimon({ level, onLevelUp, isPlaying, onMatchingSeqs }) {
       playerSequence.length === sequence.length - 1 &&
       playerSequence.length !== 0
     ) {
-      onMatchingSeqs();
+      onEndPlay();
+    }
+
+    if (!sequenceMatch(sequence, playerSequence)) {
+      onEndGame();
+      onEndPlay();
     }
   });
 
@@ -40,12 +52,20 @@ function DeviceSimon({ level, onLevelUp, isPlaying, onMatchingSeqs }) {
 
   async function handleShowSequence() {
     setAllowClicks(false);
-    for (const num of sequence) {
+    if (difficulty === "easy") {
+      for (const num of sequence) {
+        await wait(0.5);
+        setActiveBtn(num);
+        await wait(0.5);
+        setActiveBtn(null);
+      }
+    } else if (difficulty === "hard") {
       await wait(0.5);
-      setActiveBtn(num);
+      setActiveBtn(sequence[sequence.length - 1]);
       await wait(0.5);
       setActiveBtn(null);
     }
+
     setAllowClicks(true);
   }
 
@@ -91,9 +111,13 @@ function DeviceSimon({ level, onLevelUp, isPlaying, onMatchingSeqs }) {
           <button onClick={handleNextLevel}>Start Next Level</button>
         )}
       </div>
-      {isPlaying && allowClicks && (
-        <button className={classes.repeat}>Repeat Sequence</button>
-      )}
+      <button
+        className={classes.repeat}
+        onClick={handleShowSequence}
+        disabled={!allowClicks || !isPlaying}
+      >
+        Repeat Sequence
+      </button>
     </>
   );
 }

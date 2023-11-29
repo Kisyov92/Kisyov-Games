@@ -61,6 +61,12 @@
   margin-top: 3rem;
 }
 
+.repeat:disabled {
+  cursor: not-allowed;
+  background-color: rgba(227, 183, 160);
+  box-shadow: none;
+}
+
 .active {
   opacity: 0.7;
 }
