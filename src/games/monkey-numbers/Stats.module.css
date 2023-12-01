@@ -1,0 +1,12 @@
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 50rem;
+}
+
+.stats p {
+  font-size: 3.8rem;
+  margin: 3rem 0;
+}

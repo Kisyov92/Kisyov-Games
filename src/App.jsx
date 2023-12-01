@@ -2,13 +2,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/RootLayout";
 import Darts from "./games/darts/Darts";
 import Simon from "./games/simon/Simon";
+import HomePaga from "./pages/HomePaga";
+import MonkeyNumbers from "./games/monkey-numbers/MonkeyNumbers";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <p>Home Page</p> },
+      { index: true, element: <HomePaga /> },
       {
         path: "darts",
         element: <Darts />,
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "monkey-numbers",
-        element: <p>monkey-numbers</p>,
+        element: <MonkeyNumbers />,
       },
     ],
   },

@@ -1,0 +1,12 @@
+.gamesList {
+  display: flex;
+  gap: 3rem;
+
+  margin: 3rem;
+  list-style-type: none;
+}
+
+.gamesList img {
+  width: 200px;
+  height: 200px;
+}

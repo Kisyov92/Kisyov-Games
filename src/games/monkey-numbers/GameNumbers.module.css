@@ -1,0 +1,29 @@
+.board {
+  display: grid;
+  gap: 3rem;
+  width: fit-content;
+
+  margin: 0 auto;
+}
+
+.board button {
+  font-size: 15rem;
+  background-color: rgba(227, 183, 160, 0.7);
+  border: none;
+  width: 20rem;
+  height: 20rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board button:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: rgba(227, 183, 160, 0.9);
+  cursor: pointer;
+}
+.board button:disabled {
+  cursor: not-allowed;
+  color: black;
+}
