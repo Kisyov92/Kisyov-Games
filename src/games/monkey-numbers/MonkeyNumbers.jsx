@@ -6,7 +6,7 @@ import GameNumbers from "./GameNumbers";
 import Controls from "./Controls";
 
 const INITIAL_LIVES = 3;
-const TIME = 3;
+const TIME = 20;
 
 function MonkeyNumbers() {
   const [isPlaying, setIsPlaying] = useState(null);
@@ -27,6 +27,7 @@ function MonkeyNumbers() {
     setIsPlaying(diff);
     setLevel(initialLevel);
     setLives(INITIAL_LIVES);
+    setTimeLeft(TIME - (level % 10));
   }
 
   function handlePlayAgain() {
@@ -44,6 +45,21 @@ function MonkeyNumbers() {
     setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
   }, []);
 
+  function handleEarlyStart() {
+    setTimeLeft(0);
+  }
+
+  function handleMistake() {
+    setLives((l) => l - 1);
+  }
+
+  function handleLevelUp() {
+    setLives((l) => l + 1);
+    setLevel((l) => l + 1);
+    setRestart((r) => r + 1);
+    setTimeLeft(TIME - (level % 10));
+  }
+
   return (
     <>
       {!isPlaying && <StartModal onGameStart={handleGameStart} />}
@@ -59,11 +75,16 @@ function MonkeyNumbers() {
             level={level}
             key={restart}
             timerRunning={timerRunning}
+            onEarlyStart={handleEarlyStart}
+            onMistake={handleMistake}
+            onLevelUp={handleLevelUp}
           />
           <Controls onPlayAgain={handlePlayAgain} onRestart={handleRestart} />
         </>
       )}
-      {gameOver && isPlaying && <GameOverModal onPlayAgain={handlePlayAgain} />}
+      {gameOver && isPlaying && (
+        <GameOverModal onPlayAgain={handlePlayAgain} level={level} />
+      )}
       {/* <button onClick={() => setRestart((prev) => prev + 1)}>asdasdasd</button> */}
     </>
   );
