@@ -1,24 +1,7 @@
 /* eslint-disable react/prop-types */
 
-import { useRef } from "react";
+import { useState } from "react";
 import classes from "./Question.module.css";
-
-function shuffle(array) {
-  let currentIndex = array.length;
-  let randomIndex;
-
-  while (currentIndex > 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
 
 function decodeHtml(html) {
   var txt = document.createElement("textarea");
@@ -31,14 +14,15 @@ function Question({
   onNextQuestion,
   questionCounter,
   questionsAmount,
+  answers,
+  correctAnswerId,
   onCorrectAnswer,
 }) {
-  const answers = useRef(
-    shuffle([...question.incorrect_answers, question.correct_answer])
-  );
+  const [playerAnswerId, setPlayerAnswerId] = useState(null);
 
   function handleAnswer(e) {
-    if (e.target.value) onCorrectAnswer();
+    if (playerAnswerId === null) setPlayerAnswerId(+e.target.id);
+    if (+e.target.id === correctAnswerId) onCorrectAnswer();
   }
 
   return (
@@ -49,10 +33,17 @@ function Question({
       </div>
       <p>{question.question}</p>
       <div className={classes.options}>
-        {answers.current.map((answer, i) => (
+        {answers?.map((answer, i) => (
           <button
-            key={i}
-            value={answer === question.correct_answer ? true : false}
+            key={answer}
+            id={i}
+            className={
+              playerAnswerId !== null && correctAnswerId === i
+                ? classes.correct
+                : playerAnswerId === i
+                ? classes.wrong
+                : ""
+            }
             onClick={handleAnswer}
           >
             {decodeHtml(answer)}
@@ -66,7 +57,9 @@ function Question({
             asd
           </progress>
         </div>
-        <button onClick={onNextQuestion}>Skip Question</button>
+        <button onClick={onNextQuestion}>
+          {playerAnswerId ? "Next" : "Skip"} Question
+        </button>
       </div>
     </div>
   );

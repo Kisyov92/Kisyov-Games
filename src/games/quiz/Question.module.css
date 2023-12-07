@@ -76,3 +76,11 @@
 .progress div label {
   margin-right: 2rem;
 }
+
+.correct {
+  background-color: green !important;
+}
+
+.wrong {
+  background-color: red !important;
+}
