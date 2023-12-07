@@ -4,6 +4,7 @@ import Darts from "./games/darts/Darts";
 import Simon from "./games/simon/Simon";
 import HomePaga from "./pages/HomePaga";
 import MonkeyNumbers from "./games/monkey-numbers/MonkeyNumbers";
+import Quiz from "./games/quiz/Quiz";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "monkey-numbers",
         element: <MonkeyNumbers />,
+      },
+      {
+        path: "quiz",
+        element: <Quiz />,
       },
     ],
   },
