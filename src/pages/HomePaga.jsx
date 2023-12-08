@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import dartsImg from "../../public/darts.jpg";
 import simonImg from "../../public/simon.jpg";
 import monkeyNumbersImg from "../../public/monkey-numbers.jpg";
-import QuizImg from "../../public/Quiz_logo.jpg";
+import quizImg from "../../public/Quiz_logo.jpg";
+import blankStories from "../../public/blank_stories.jpg";
 
 import classes from "./HomePage.module.css";
 
@@ -26,7 +27,12 @@ function HomePaga() {
       </li>
       <li>
         <Link to="quiz">
-          <img src={QuizImg} alt="quiz game" />
+          <img src={quizImg} alt="quiz game" />
+        </Link>
+      </li>
+      <li>
+        <Link to="blank-stories">
+          <img src={blankStories} alt="blank stories" />
         </Link>
       </li>
     </ul>
