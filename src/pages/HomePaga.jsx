@@ -8,7 +8,6 @@ import blankStories from "../../public/blank_stories.jpg";
 import classes from "./HomePage.module.css";
 
 function HomePaga() {
-  const a = 1;
   return (
     <ul className={classes.gamesList}>
       <li>
