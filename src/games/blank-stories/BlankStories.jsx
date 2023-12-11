@@ -1,12 +1,16 @@
 import { useState } from "react";
 import Modal from "../../UI/Modal";
+import StartModal from "./StartModal";
+import WordsInput from "./WordsInput";
+import Story from "./Story";
 
 function BlankStories() {
-  const [story, setStory] = useState("");
+  const [story, setStory] = useState(null);
+  const [playerWords, setPlayerWords] = useState([]);
+  const storyIsReady = story?.blanks.length === playerWords.length;
 
-  async function fetchStory() {
+  async function handlefetchStory() {
     const res = await fetch("https://madlibs-api.vercel.app/api/random");
-    console.log(res);
     const data = await res.json();
 
     if (!res.ok) {
@@ -16,16 +20,34 @@ function BlankStories() {
     setStory(data);
   }
 
-  console.log(story);
+  function handleAddPlayerWord(newWord) {
+    if (newWord.trim() === "") return;
+    setPlayerWords((prev) => [...prev, newWord]);
+  }
+
+  function handleNewStory() {
+    setStory(null);
+    setPlayerWords([]);
+  }
 
   return (
-    <Modal>
-      <h2>Blank stories</h2>
-      <p>Wright your on story with just a few words</p>
-      <p>Press start to fill the missing words</p>
-      <p>Be creative</p>
-      <button onClick={fetchStory}>Start</button>
-    </Modal>
+    <>
+      {!story && <StartModal onFetchStory={handlefetchStory} />}
+      {story && !storyIsReady && (
+        <WordsInput
+          story={story}
+          playerWords={playerWords}
+          onAddPlayerWord={handleAddPlayerWord}
+        />
+      )}
+      {story && storyIsReady && (
+        <Story
+          story={story}
+          playerWords={playerWords}
+          onNewStory={handleNewStory}
+        />
+      )}
+    </>
   );
 }
 

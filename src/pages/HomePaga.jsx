@@ -4,6 +4,7 @@ import simonImg from "../../public/simon.jpg";
 import monkeyNumbersImg from "../../public/monkey-numbers.jpg";
 import quizImg from "../../public/Quiz_logo.jpg";
 import blankStories from "../../public/blank_stories.jpg";
+import hangman from "../../public/hangman.jpg";
 
 import classes from "./HomePage.module.css";
 
@@ -33,6 +34,11 @@ function HomePaga() {
       <li>
         <Link to="blank-stories">
           <img src={blankStories} alt="blank stories" />
+        </Link>
+      </li>
+      <li>
+        <Link to="hangman">
+          <img src={hangman} alt="hangman" />
         </Link>
       </li>
     </ul>

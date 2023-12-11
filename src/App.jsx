@@ -6,6 +6,7 @@ import HomePaga from "./pages/HomePaga";
 import MonkeyNumbers from "./games/monkey-numbers/MonkeyNumbers";
 import Quiz from "./games/quiz/Quiz";
 import BlankStories from "./games/blank-stories/BlankStories";
+import Hangman from "./games/hangman/Hangman";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "blank-stories",
         element: <BlankStories />,
+      },
+      {
+        path: "hangman",
+        element: <Hangman />,
       },
     ],
   },
