@@ -1,0 +1,15 @@
+.input {
+  font-size: 3rem;
+  font-style: inherit;
+  columns: inherit;
+  padding: 1rem 2rem;
+  border: none;
+  margin: 0rem 10rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}

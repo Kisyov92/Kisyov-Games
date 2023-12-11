@@ -1,0 +1,56 @@
+.mod {
+  width: 90%;
+}
+.mod > p {
+  width: 80%;
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
+}
+
+.board span {
+  font-size: 5rem;
+  justify-self: end;
+}
+
+.board img {
+  width: 300px;
+}
+
+.letters {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.alphabet button:disabled {
+  background-color: rgb(192, 192, 192, 0.5);
+}
+.alphabet button:disabled:hover {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.controls {
+  display: flex;
+  gap: 5rem;
+}
+
+.definition {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
