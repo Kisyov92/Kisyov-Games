@@ -1,0 +1,35 @@
+.options {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f0fdfa;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.options h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.level {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.level p {
+  margin-right: 5rem;
+}
+
+.level div {
+  background-color: #ffe4e6;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.level div:last-child {
+  background-color: #fda4af;
+}

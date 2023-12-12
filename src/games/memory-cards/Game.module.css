@@ -1,0 +1,15 @@
+.game {
+  margin: 5rem 10rem;
+  background-color: #ffedd5;
+
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #ffedd5;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+}
+
+.game img {
+  width: 10rem;
+  height: 10rem;
+}

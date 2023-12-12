@@ -7,6 +7,7 @@ import MonkeyNumbers from "./games/monkey-numbers/MonkeyNumbers";
 import Quiz from "./games/quiz/Quiz";
 import BlankStories from "./games/blank-stories/BlankStories";
 import Hangman from "./games/hangman/Hangman";
+import MemoryApp from "./games/memory-cards/MemoryApp";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "hangman",
         element: <Hangman />,
+      },
+      {
+        path: "memory",
+        element: <MemoryApp />,
       },
     ],
   },

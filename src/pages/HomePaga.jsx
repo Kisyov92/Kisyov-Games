@@ -5,6 +5,7 @@ import monkeyNumbersImg from "../../public/monkey-numbers.jpg";
 import quizImg from "../../public/Quiz_logo.jpg";
 import blankStories from "../../public/blank_stories.jpg";
 import hangman from "../../public/hangman.jpg";
+import memoryImg from "../../public/memory.png";
 
 import classes from "./HomePage.module.css";
 
@@ -39,6 +40,11 @@ function HomePaga() {
       <li>
         <Link to="hangman">
           <img src={hangman} alt="hangman" />
+        </Link>
+      </li>
+      <li>
+        <Link to="memory">
+          <img src={memoryImg} alt="memory" />
         </Link>
       </li>
     </ul>
