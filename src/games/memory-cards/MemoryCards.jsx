@@ -1,3 +1,5 @@
+import classes from "./MemoryCards.module.css";
+
 import catOne from "../../../public/memory-cards/cat1.webp";
 import catTwo from "../../../public/memory-cards/cat2.webp";
 import dino from "../../../public/memory-cards/dino.webp";
@@ -17,6 +19,9 @@ import dogThree from "../../../public/memory-cards/dog3.png";
 import giraffe from "../../../public/memory-cards/giraffe.png";
 import dragon from "../../../public/memory-cards/dragon.jpg";
 import MemoryCard from "./MemoryCard";
+import { useSelector } from "react-redux";
+import { shuffleArray } from "../../util/util";
+import { useEffect, useMemo, useState } from "react";
 
 const MEMORY_IMAGES = [
   catOne,
@@ -40,10 +45,24 @@ const MEMORY_IMAGES = [
 ];
 
 function MemoryCards() {
+  const [gameCards, setGameCards] = useState([]);
+
+  const cols = useSelector((store) => store.cols);
+  const cardsNum = useSelector((store) => store.cards);
+
+  const uniqueCards = useMemo(() => MEMORY_IMAGES.slice(-cardsNum), [cardsNum]);
+
+  useEffect(() => {
+    setGameCards(shuffleArray(uniqueCards.concat(uniqueCards)));
+  }, [uniqueCards]);
+
   return (
-    <div>
-      {MEMORY_IMAGES.map((img) => (
-        <MemoryCard key={img} imgSrc={img} />
+    <div
+      className={classes.cards}
+      style={{ gridTemplateColumns: `repeat(${cols},1fr)` }}
+    >
+      {gameCards.map((img, i) => (
+        <MemoryCard key={`${img}${i}`} imgSrc={img} turned={false} />
       ))}
     </div>
   );

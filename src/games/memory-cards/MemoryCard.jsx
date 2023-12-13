@@ -1,6 +1,8 @@
+import CardBack from "./CardBack";
+
 /* eslint-disable react/prop-types */
-function MemoryCard({ imgSrc }) {
-  return <img src={imgSrc} alt="memory card" />;
+function MemoryCard({ imgSrc, turned }) {
+  return <>{turned ? <img src={imgSrc} alt="memory card" /> : <CardBack />}</>;
 }
 
 export default MemoryCard;

@@ -1,0 +1,7 @@
+.cards {
+  margin: 2rem auto;
+
+  display: grid;
+  gap: 2rem;
+  width: fit-content;
+}
