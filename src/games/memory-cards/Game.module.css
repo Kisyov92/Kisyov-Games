@@ -14,3 +14,12 @@
   width: 10rem;
   height: 10rem;
 }
+
+.gameInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gameInfo div {
+  font-size: 2rem;
+}

@@ -5,6 +5,9 @@ import classes from "./Options.module.css";
 
 function Options() {
   const level = useSelector((state) => state.level);
+  const numberCards = useSelector((state) => state.numberCards);
+  const showMistakes = useSelector((state) => state.showMistakes);
+  const showMoves = useSelector((state) => state.showMoves);
   const dispatch = useDispatch();
 
   function handleLevels(payload) {
@@ -16,7 +19,7 @@ function Options() {
     <div className={classes.options}>
       <h2>Options</h2>
       <div className={classes.level}>
-        <p>Level:</p>
+        <p>Difficulty:</p>
         <div
           onClick={() => handleLevels({ cols: 4, cards: 6, lvl: 1 })}
           className={level === 1 ? classes.active : ""}
@@ -47,6 +50,51 @@ function Options() {
         >
           6x6
         </div>
+      </div>
+      <div className={classes.bool}>
+        <p>Numbered cards:</p>
+        <button
+          className={numberCards ? classes.active : ""}
+          onClick={() => dispatch(gameAction.handleCardNumbers(true))}
+        >
+          ON
+        </button>
+        <button
+          className={!numberCards ? classes.active : ""}
+          onClick={() => dispatch(gameAction.handleCardNumbers(false))}
+        >
+          OFF
+        </button>
+      </div>
+      <div className={classes.bool}>
+        <p>Hide the moves:</p>
+        <button
+          className={showMoves ? classes.active : ""}
+          onClick={() => dispatch(gameAction.handleShowMoves(true))}
+        >
+          ON
+        </button>
+        <button
+          className={!showMoves ? classes.active : ""}
+          onClick={() => dispatch(gameAction.handleShowMoves(false))}
+        >
+          OFF
+        </button>
+      </div>
+      <div className={classes.bool}>
+        <p>Hide the mistakes:</p>
+        <button
+          className={showMistakes ? classes.active : ""}
+          onClick={() => dispatch(gameAction.handleShowMistakes(true))}
+        >
+          ON
+        </button>
+        <button
+          className={!showMistakes ? classes.active : ""}
+          onClick={() => dispatch(gameAction.handleShowMistakes(false))}
+        >
+          OFF
+        </button>
       </div>
     </div>
   );

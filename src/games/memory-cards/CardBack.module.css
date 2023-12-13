@@ -5,6 +5,12 @@
 
   border-radius: 5px;
   border: 5px blue solid;
+
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eff6ff;
 }
 
 .card:hover {
