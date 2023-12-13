@@ -17,3 +17,11 @@ export function shuffleArray(array) {
 
   return array;
 }
+
+export function wait(secs) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("anything");
+    }, secs * 1000);
+  });
+}

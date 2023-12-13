@@ -19,9 +19,10 @@ import dogThree from "../../../public/memory-cards/dog3.png";
 import giraffe from "../../../public/memory-cards/giraffe.png";
 import dragon from "../../../public/memory-cards/dragon.jpg";
 import MemoryCard from "./MemoryCard";
-import { useSelector } from "react-redux";
-import { shuffleArray } from "../../util/util";
+import { useDispatch, useSelector } from "react-redux";
+import { shuffleArray, wait } from "../../util/util";
 import { useEffect, useMemo, useState } from "react";
+import { gameAction } from "./store/game";
 
 const MEMORY_IMAGES = [
   catOne,
@@ -49,6 +50,8 @@ function MemoryCards() {
 
   const cols = useSelector((store) => store.cols);
   const cardsNum = useSelector((store) => store.cards);
+  const matchAttempt = useSelector((store) => store.matchAttempt);
+  const dispatch = useDispatch();
 
   const uniqueCards = useMemo(() => MEMORY_IMAGES.slice(-cardsNum), [cardsNum]);
 
@@ -56,13 +59,29 @@ function MemoryCards() {
     setGameCards(shuffleArray(uniqueCards.concat(uniqueCards)));
   }, [uniqueCards]);
 
+  useEffect(() => {
+    async function endTurn() {
+      if (matchAttempt.firstCard && matchAttempt.secondCard) {
+        if (matchAttempt.firstCard.cardId !== matchAttempt.secondCard.cardId)
+          await wait(1);
+        dispatch(
+          gameAction.endTurn({
+            firstCardId: matchAttempt.firstCard.seqId,
+            secondCardId: matchAttempt.secondCard.seqId,
+          })
+        );
+      }
+    }
+    endTurn();
+  }, [matchAttempt]);
+
   return (
     <div
       className={classes.cards}
       style={{ gridTemplateColumns: `repeat(${cols},1fr)` }}
     >
       {gameCards.map((img, i) => (
-        <MemoryCard key={`${img}${i}`} imgSrc={img} turned={false} />
+        <MemoryCard key={`${img}${i}`} imgSrc={img} seqId={i} />
       ))}
     </div>
   );

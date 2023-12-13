@@ -24,12 +24,12 @@
 }
 
 .level div {
-  background-color: #ffe4e6;
+  background-color: none;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 1rem 2rem;
 }
 
-.level div:last-child {
-  background-color: #fda4af;
+.level .active {
+  background-color: #60a5fa;
 }

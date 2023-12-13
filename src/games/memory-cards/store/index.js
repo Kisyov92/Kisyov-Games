@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import optionsReducer from "./options";
+import gameReducer from "./game";
 
 const store = configureStore({
-  reducer: optionsReducer,
+  reducer: gameReducer,
 });
 
 export default store;
