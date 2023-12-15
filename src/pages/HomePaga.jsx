@@ -6,6 +6,7 @@ import quizImg from "../../public/Quiz_logo.jpg";
 import blankStories from "../../public/blank_stories.jpg";
 import hangman from "../../public/hangman.jpg";
 import memoryImg from "../../public/memory.png";
+import sudoku from "../../public/sudoku.jpg";
 
 import classes from "./HomePage.module.css";
 
@@ -45,6 +46,11 @@ function HomePaga() {
       <li>
         <Link to="memory">
           <img src={memoryImg} alt="memory" />
+        </Link>
+      </li>
+      <li>
+        <Link to="sudoku">
+          <img src={sudoku} alt="sudoku" />
         </Link>
       </li>
     </ul>

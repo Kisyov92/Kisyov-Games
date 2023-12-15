@@ -8,6 +8,7 @@ import Quiz from "./games/quiz/Quiz";
 import BlankStories from "./games/blank-stories/BlankStories";
 import Hangman from "./games/hangman/Hangman";
 import MemoryApp from "./games/memory-cards/MemoryApp";
+import SudokuApp from "./games/sudoku/SudokuApp";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "memory",
         element: <MemoryApp />,
+      },
+      {
+        path: "sudoku",
+        element: <SudokuApp />,
       },
     ],
   },

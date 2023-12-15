@@ -1,0 +1,42 @@
+.board {
+  width: fit-content;
+  background-color: #ffedd5;
+
+  border-left: 4px solid #000;
+  border-top: 4px solid #000;
+}
+
+.board > div:nth-child(3n) {
+  border-bottom: 4px solid #000;
+}
+
+.board > div {
+  display: flex;
+}
+
+.num {
+  font-size: 4rem;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.num:nth-child(3n) {
+  border-right: 4px solid #000;
+}
+
+.active {
+  background-color: #e6d5c0;
+}
+
+.wrong {
+  background-color: red;
+}
+
+.wrong.active {
+  background-color: rgb(245, 121, 121);
+}
