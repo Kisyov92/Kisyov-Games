@@ -29,7 +29,6 @@
 .modal > p {
   text-align: center;
   padding: 0 15rem;
-  margin-bottom: auto;
 }
 
 .info {
@@ -52,9 +51,8 @@
 }
 
 .options button {
-  font-size: 3.2rem;
   background-color: inherit;
-  padding: 1rem 2rem;
+  padding: 0.5rem;
 
   border: 3px solid rgba(227, 183, 160, 0.7);
   border-radius: 1rem;
@@ -83,4 +81,86 @@
 
 .wrong {
   background-color: red !important;
+}
+
+@media (max-width: 1100px) {
+  .modal {
+    min-height: auto;
+  }
+  .modal p {
+    font-size: 3rem;
+    padding: 0rem 5rem;
+  }
+  .info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .info p {
+    font-size: 1.8rem;
+  }
+  .options button {
+    font-size: 2.4rem;
+  }
+  .progress {
+    font-size: 2.4rem;
+  }
+  .progress button {
+    font-size: 2.4rem;
+  }
+  .progress progress {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal {
+    padding: 2.5rem 5rem;
+    margin: 2.5rem 5rem;
+  }
+  .modal p {
+    padding: 0;
+  }
+  .modal p,
+  .options button {
+    font-size: 2.2rem;
+  }
+  .info p,
+  .progress button,
+  .progress {
+    font-size: 1.8rem;
+  }
+  .progress progress {
+    width: 24rem;
+  }
+
+  .progress {
+    flex-direction: column-reverse;
+  }
+  .progress button {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal p,
+  .options button {
+    font-size: 1.6rem;
+  }
+  .info p,
+  .progress button,
+  .progress {
+    font-size: 1.4rem;
+  }
+  .options {
+    gap: 1rem 2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
+  .progress progress {
+    width: 12rem;
+  }
 }

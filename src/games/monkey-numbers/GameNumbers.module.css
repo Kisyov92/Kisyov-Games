@@ -27,3 +27,34 @@
   cursor: not-allowed;
   color: black;
 }
+
+@media (max-width: 1100px) {
+  .board button {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 1100px) {
+  .board button {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 900px) {
+  .board button {
+    width: 10rem;
+    height: 10rem;
+    font-size: 8rem;
+  }
+}
+@media (max-width: 700px) {
+  .board {
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .board button {
+    width: 7rem;
+    height: 7rem;
+    font-size: 5rem;
+  }
+}

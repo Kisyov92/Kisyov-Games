@@ -10,6 +10,11 @@ html {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
   color: #3f3f46;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 #root {

@@ -15,7 +15,7 @@ function FriendInput({ onOponentWordInput }) {
           fontSize: "3.2rem",
         }}
       >
-        <label style={{ marginBottom: "2rem" }} htmlFor="word">
+        <label style={{ marginBottom: "2rem", width: "100%" }} htmlFor="word">
           Wright a word for your oponent to guess
         </label>
         <input
@@ -24,13 +24,14 @@ function FriendInput({ onOponentWordInput }) {
             fontSize: "inherit",
             padding: "1rem 2rem",
             marginBottom: "2rem",
+            width: "100%",
           }}
           type="text"
           id="word"
           ref={word}
         />
 
-        <button>Submit</button>
+        <button style={{ width: "100%" }}>Submit</button>
       </form>
     </Modal>
   );

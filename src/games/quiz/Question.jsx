@@ -53,9 +53,11 @@ function Question({
       <div className={classes.progress}>
         <div>
           <label htmlFor="progress">Quiz progress:</label>
-          <progress id="progress" max={questionsAmount} value={questionCounter}>
-            asd
-          </progress>
+          <progress
+            id="progress"
+            max={questionsAmount}
+            value={questionCounter}
+          ></progress>
         </div>
         <button onClick={onNextQuestion}>
           {playerAnswerId ? "Next" : "Skip"} Question

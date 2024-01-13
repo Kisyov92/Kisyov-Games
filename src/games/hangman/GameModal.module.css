@@ -19,7 +19,7 @@
 }
 
 .board img {
-  width: 300px;
+  width: 250px;
 }
 
 .letters {
@@ -34,6 +34,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.mod button {
+  font-size: 1.6rem;
 }
 
 .alphabet button:disabled {
@@ -53,4 +57,33 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+
+@media (max-width: 1600px) {
+  .mod button {
+    padding: 1rem 2rem;
+  }
+  .board span {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 700px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+  .mod h2 {
+    margin-top: 5rem;
+  }
+  .mod button {
+    padding: 0.5rem 1rem;
+  }
+  .board span {
+    font-size: 2.4rem;
+  }
+  .controls {
+    gap: 2rem;
+  }
+  .board img {
+    width: 150px;
+  }
 }

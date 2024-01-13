@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 function timeout(s) {
   return new Promise((resolve) => setTimeout(resolve, s * 1000));
