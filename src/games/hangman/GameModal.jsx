@@ -4,7 +4,13 @@ import Modal from "../../UI/Modal";
 
 import classes from "./GameModal.module.css";
 
-import hangmanImg from "../../../public/hangsman/hangman-0.png";
+import hangmanImg0 from "../../../public/hangsman/hangman-0.png";
+import hangmanImg1 from "../../../public/hangsman/hangman-1.png";
+import hangmanImg2 from "../../../public/hangsman/hangman-2.png";
+import hangmanImg3 from "../../../public/hangsman/hangman-3.png";
+import hangmanImg4 from "../../../public/hangsman/hangman-4.png";
+import hangmanImg5 from "../../../public/hangsman/hangman-5.png";
+import hangmanImg6 from "../../../public/hangsman/hangman-6.png";
 
 const ALPHABET = [
   "A",
@@ -61,7 +67,33 @@ function GameModal({ oponentWord, onNewWord }) {
     setLives((l) => l - 1);
   }, [attemptedLetters]);
 
-  const hangmanLives = hangmanImg.split("-")[0] + `-${lives}.png`;
+  let hangmanLives;
+  switch (lives) {
+    case 0:
+      hangmanLives = hangmanImg0;
+      break;
+    case 1:
+      hangmanLives = hangmanImg1;
+      break;
+    case 2:
+      hangmanLives = hangmanImg2;
+      break;
+    case 3:
+      hangmanLives = hangmanImg3;
+      break;
+    case 4:
+      hangmanLives = hangmanImg4;
+      break;
+    case 5:
+      hangmanLives = hangmanImg5;
+      break;
+    case 6:
+      hangmanLives = hangmanImg6;
+      break;
+    default:
+      hangmanLives = hangmanImg0;
+  }
+  console.log(lives);
 
   useEffect(() => {
     if (word) {

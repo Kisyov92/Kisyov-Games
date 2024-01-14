@@ -23,3 +23,16 @@
 .gameInfo div {
   font-size: 2rem;
 }
+
+@media (max-width: 900px) {
+  .game img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+@media (max-width: 700px) {
+  .game img {
+    width: 6rem;
+    height: 6rem;
+  }
+}

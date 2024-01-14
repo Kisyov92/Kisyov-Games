@@ -9,6 +9,17 @@ function StartModal({ onFetchStory }) {
       <p>Press start to fill the missing words</p>
       <p>Be creative</p>
       <button onClick={onFetchStory}>Start</button>
+      <p>
+        To play the game you need{" "}
+        <a
+          href="https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          this
+        </a>{" "}
+        extension
+      </p>
     </Modal>
   );
 }
