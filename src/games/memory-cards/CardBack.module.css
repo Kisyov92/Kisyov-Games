@@ -17,3 +17,16 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
   cursor: pointer;
 }
+
+@media (max-width: 900px) {
+  .card {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+@media (max-width: 700px) {
+  .card {
+    width: 6rem;
+    height: 6rem;
+  }
+}

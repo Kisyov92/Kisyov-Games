@@ -57,3 +57,37 @@
 .bool .active {
   background-color: #60a5fa;
 }
+
+@media (max-width: 900px) {
+  .level,
+  .bool {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .level p,
+  .bool p {
+    font-size: 1.6rem;
+  }
+  .level div,
+  .bool div,
+  .bool button {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 460px) {
+  .bool,
+  .level {
+    flex-direction: column;
+  }
+  .level,
+  .bool {
+    justify-content: center;
+  }
+  .level p,
+  .bool p {
+    margin: 0;
+  }
+}

@@ -5,3 +5,14 @@
   gap: 2rem;
   width: fit-content;
 }
+
+@media (max-width: 900px) {
+  .cards {
+    gap: 1rem;
+  }
+}
+@media (max-width: 460px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}

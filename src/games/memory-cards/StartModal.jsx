@@ -5,7 +5,7 @@ function StartModal({ onPlay }) {
   return (
     <Modal>
       <h2>Welcome to memory cards</h2>
-      <p style={{ width: "60rem", textAlign: "center" }}>
+      <p>
         By trying to find the matching cards you can test and improve your
         memory
       </p>

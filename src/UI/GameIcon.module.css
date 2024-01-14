@@ -30,11 +30,6 @@
 }
 
 @media (max-width: 700px) {
-  .icon {
-    width: 12.5rem;
-    height: 12.5rem;
-  }
-
   .gameName {
     font-size: 1.8rem;
   }
@@ -43,8 +38,8 @@
   .icon {
     padding: 5px;
     border-radius: 5px;
-    width: 8rem;
-    height: 8rem;
+    width: 12rem;
+    height: 12rem;
   }
 
   .gameName {
