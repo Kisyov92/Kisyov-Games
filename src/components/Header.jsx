@@ -28,9 +28,7 @@ function Header() {
           <li onClick={closeMenu}>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li onClick={closeMenu}>
-            <NavLink>About</NavLink>
-          </li>
+
           <li onClick={closeMenu}>
             <NavLink to="https://atanas-kisyov.netlify.app/" target="_blank">
               Portfolio
