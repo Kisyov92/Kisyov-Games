@@ -11,7 +11,7 @@ function StartModal({ onSetDifficulty }) {
       <p>
         Easy mode: the whole sequence is shown at the beginning of every level
       </p>
-      <p>Hard mode: only the added part is shown.</p>
+      <p>Hard mode: only the new addition to the sequence is shown.</p>
       <div>
         <button onClick={() => onSetDifficulty("easy")}>Easy</button>
         <button onClick={() => onSetDifficulty("hard")}>Hard</button>

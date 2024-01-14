@@ -93,7 +93,6 @@ function GameModal({ oponentWord, onNewWord }) {
     default:
       hangmanLives = hangmanImg0;
   }
-  console.log(lives);
 
   useEffect(() => {
     if (word) {
@@ -165,8 +164,6 @@ function GameModal({ oponentWord, onNewWord }) {
 
     setDefinitionCounter((d) => d + 1);
   }
-
-  console.log(definition);
 
   return (
     <>

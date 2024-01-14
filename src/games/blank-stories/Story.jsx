@@ -13,7 +13,6 @@ function createStory(textArr, wordsArr) {
 
 function Story({ story, playerWords, onNewStory }) {
   const text = createStory(story.text, playerWords);
-  console.log(text);
   return (
     <div className={classes.story}>
       <h2>{story.title}</h2>

@@ -12,7 +12,6 @@ function Target({ onTargetClick, difficulty }) {
   const left = randomPercent();
 
   const [size, setSize] = useState(200);
-  console.log(difficulty);
 
   function handleHit(e) {
     onTargetClick(+e.target.id);
